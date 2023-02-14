@@ -25,5 +25,15 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
   * Enable **SSH** and **VNC** interfaces using **Raspberry Pi Configuration** utility.
   * Setting up **VNC** interface requires [additional steps](https://superuser.com/questions/1532602/remmina-unknown-authentication-scheme-from-vnc-server-13-5-6-130-192) for me, since I am getting error message "Unknown authentication scheme from VNC server: 13, 5, 6, 130, 192" (I am using Remmina application on Ubuntu **host** machine):
   * `sudo vncpasswd -service` 
+    Now, edit the file `/root/.vnc/config.d/vncserver-x11`
+    `sudo nano /root/.vnc/config.d/vncserver-x11`
+    and add the following line at the end of the file:
+    `Authentication=VncAuth`
+Now your config file should look more or less like mine:
+'AnlLastConnTime=int64:0000000000000000
+_LastUpdateCheckSuccessTime=int64:01d9404a78664d28
+_LastUpdateCheckTime=int64:01d9404a78664d28
+Password=1996ddb0ce9442feb79a4a14dcb08a2c
+Authentication=VncAuth`
  
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
