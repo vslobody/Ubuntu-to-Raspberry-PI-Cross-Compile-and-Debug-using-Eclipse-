@@ -42,5 +42,6 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
      Password=1996ddb0ce9442feb79a4a14dcb08a2c
      Authentication=VncAuth
    ``` 
+   Eventually, restart the VNC server service with `sudo systemctl restart vncserver-x11-serviced` command
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
