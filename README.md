@@ -22,7 +22,7 @@ Using Raspberry Pi Imager version 1.7.3 we install Raspberry PI 64 bit image ont
 With newly burned image, we insert Micro SD memory card into the slot on the Raspberry Pi box. We also connect Terminal, mouse and keyboard, power up and follow the motions. We will omit describing the routine steps, like WiFi set up, updates and so on, we will mention only important ones.
   * Default User Name and Password - Instead of the default user name **pi** and default password **raspberry** we are going to use user name **voldemort** with corresponding password, to illustrate the maturity of the author of this repo.
   * Headless Resolution - since most of the development will be done on the **host** machine, we are going to use VNC to connect to the Raspberry Pi box, and to support operation with display connected, set up it to appropriate value (like 1920 x 1080) using **Raspberry Pi Configuration** utility.
-  * Enable **SSH** and **VNC** interfaces using **Raspberry Pi Configuration** utility.
+  * Enable **SSH** and **VNC** interfaces using **![Raspberry Pi Configuration]** utility.
   * Setting up **VNC** interface requires [additional steps](https://superuser.com/questions/1532602/remmina-unknown-authentication-scheme-from-vnc-server-13-5-6-130-192) for me, since I am getting error message "Unknown authentication scheme from VNC server: 13, 5, 6, 130, 192" (I am using Remmina application on Ubuntu **host** machine):
     `sudo vncpasswd -service` 
    
@@ -45,3 +45,5 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
    Eventually, restart the VNC server service with `sudo systemctl restart vncserver-x11-serviced` command
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
+
+[Raspberry Pi Configuration]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/remmina_Raspberry_192.168.1.205_20230214-082127.png
