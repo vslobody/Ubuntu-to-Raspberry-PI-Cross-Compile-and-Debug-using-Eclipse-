@@ -44,7 +44,7 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
    ``` 
    Eventually, restart the VNC server service with `sudo systemctl restart vncserver-x11-serviced` command
    ##### Seeed Voice Card Driver Installation
-   As we mentioned in the **Hardware** section, we are using Seed Voice Card, and we need to install the drivers:
+   As we mentioned in the **Hardware** section, we are using Seeed Voice Card, and we need to install the drivers:
    ```
    sudo apt-get update
    sudo apt-get upgrade
