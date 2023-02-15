@@ -79,7 +79,10 @@ Enjoy!
 ------------------------------------------------------
 
    ```
-Worth to mention, that in my case menu bar disappears. Apparently this is [known phenomenon](https://github.com/respeaker/seeed-voicecard/issues/319), but still a bit [annoying](https://forum.seeedstudio.com/t/lxde-panel-removed-when-installing-respeaker-microphone-drivers/266045). One possible solution to this problem could be located [here](https://raspberrypi.stackexchange.com/questions/122579/after-fresh-install-of-raspberry-os-the-menu-bar-is-missing-in-tightvnc-session).
+Worth to mention, that in my case menu bar disappears. Apparently this is [known phenomenon](https://github.com/respeaker/seeed-voicecard/issues/319), but still a bit [annoying](https://forum.seeedstudio.com/t/lxde-panel-removed-when-installing-respeaker-microphone-drivers/266045). One possible solution to this problem could be located [here](https://raspberrypi.stackexchange.com/questions/122579/after-fresh-install-of-raspberry-os-the-menu-bar-is-missing-in-tightvnc-session):
+```
+sudo apt remove lxplug-volumepulse
+```
 
 Nevertheless, the installation was successful, in a sense, that we can see the installation of the audio card:
 ```
