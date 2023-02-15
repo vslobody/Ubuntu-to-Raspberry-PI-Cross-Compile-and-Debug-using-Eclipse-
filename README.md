@@ -43,7 +43,7 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
      Authentication=VncAuth
    ``` 
    Eventually, restart the VNC server service with `sudo systemctl restart vncserver-x11-serviced` command
-   ##### Seeed Voice Card Driver installation
+   ##### Seeed Voice Card Driver Installation
    As we mentioned in the **Hardware** section, we are using Seed Voice Card, and we need to install the drivers:
    ```
    sudo apt-get update
@@ -58,7 +58,7 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
    cd seeed-voicecard/
    sudo ./install.sh   
    ```
-   with some luck, the installation script will go through, andd you will see this message at the end of the script execution:
+   with some luck, the installation script will go through, and you will see this message at the end of the script execution:
    ```
    Initialized empty Git repository in /etc/voicecard/.git/
 git add --all
@@ -79,6 +79,59 @@ Enjoy!
 ------------------------------------------------------
 
    ```
+Worth to mention, that in my case menu bar disappears. Apparently this is [known phenomenon](https://github.com/respeaker/seeed-voicecard/issues/319), but still a bit [annoying](https://forum.seeedstudio.com/t/lxde-panel-removed-when-installing-respeaker-microphone-drivers/266045).
+
+Nevertheless, the installation was successful, in a sense, that we can see the installation of the audio card:
+```
+ arecord -L
+null
+    Discard all samples (playback) or generate zero samples (capture)
+lavrate
+    Rate Converter Plugin Using Libav/FFmpeg Library
+samplerate
+    Rate Converter Plugin Using Samplerate Library
+speexrate
+    Rate Converter Plugin Using Speex Resampler
+jack
+    JACK Audio Connection Kit
+oss
+    Open Sound System
+pulse
+    PulseAudio Sound Server
+upmix
+    Plugin for channel upmix (4,6,8)
+vdownmix
+    Plugin for channel downmix (stereo) with a simple spacialization
+default
+    Playback/recording through the PulseAudio sound server
+playback
+ac108
+usbstream:CARD=Headphones
+    bcm2835 Headphones
+    USB Stream Output
+usbstream:CARD=vc4hdmi0
+    vc4-hdmi-0
+    USB Stream Output
+usbstream:CARD=vc4hdmi1
+    vc4-hdmi-1
+    USB Stream Output
+hw:CARD=seeed4micvoicec,DEV=0
+    seeed-4mic-voicecard, bcm2835-i2s-ac10x-codec0 ac10x-codec0-0
+    Direct hardware device without any conversions
+plughw:CARD=seeed4micvoicec,DEV=0
+    seeed-4mic-voicecard, bcm2835-i2s-ac10x-codec0 ac10x-codec0-0
+    Hardware device with all software conversions
+sysdefault:CARD=seeed4micvoicec
+    seeed-4mic-voicecard, bcm2835-i2s-ac10x-codec0 ac10x-codec0-0
+    Default Audio Device
+dsnoop:CARD=seeed4micvoicec,DEV=0
+    seeed-4mic-voicecard, bcm2835-i2s-ac10x-codec0 ac10x-codec0-0
+    Direct sample snooping device
+usbstream:CARD=seeed4micvoicec
+    seeed-4mic-voicecard
+    USB Stream Output
+
+```
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
