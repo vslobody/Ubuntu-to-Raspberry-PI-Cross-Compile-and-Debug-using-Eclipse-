@@ -43,6 +43,42 @@ With newly burned image, we insert Micro SD memory card into the slot on the Ras
      Authentication=VncAuth
    ``` 
    Eventually, restart the VNC server service with `sudo systemctl restart vncserver-x11-serviced` command
+   ##### Seeed Voice Card Driver installation
+   As we mentioned in the **Hardware** section, we are using Seed Voice Card, and we need to install the drivers:
+   ```
+   sudo apt-get update
+   sudo apt-get upgrade
+   mkdir ~/Git
+   cd ~/Git
+   ```
+   Now, we were told to use @HinTak [repo](https://github.com/HinTak/seeed-voicecard). So we do:
+   
+   ```
+   git clone https://github.com/HinTak/seeed-voicecard.git
+   cd seeed-voicecard/
+   sudo ./install.sh   
+   ```
+   with some luck, the installation script will go through, andd you will see this message at the end of the script execution:
+   ```
+   Initialized empty Git repository in /etc/voicecard/.git/
+git add --all
+git commit -m "origin configures"
+[master (root-commit) a09f22b] origin configures
+ 7 files changed, 1482 insertions(+)
+ create mode 100644 ac108_6mic.state
+ create mode 100644 ac108_asound.state
+ create mode 100644 asound_2mic.conf
+ create mode 100644 asound_4mic.conf
+ create mode 100644 asound_6mic.conf
+ create mode 100644 dkms.conf
+ create mode 100644 wm8960_asound.state
+Created symlink /etc/systemd/system/sysinit.target.wants/seeed-voicecard.service → /lib/systemd/system/seeed-voicecard.service.
+------------------------------------------------------
+Please reboot your raspberry pi to apply all settings
+Enjoy!
+------------------------------------------------------
+
+   ```
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
