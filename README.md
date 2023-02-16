@@ -160,7 +160,7 @@ hence we need to
 ```
 sudo rsync -avz --rsync-path="sudo rsync" voldemort@raspberrypi_ip:/etc .
 ```
-Assuming we follwoed the [steps](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) we have `sysroot-relativelinks.py` code available, so we execute it:
+Assuming we followed the [steps](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) we have `sysroot-relativelinks.py` code available, so we execute it:
 ```
 ./sysroot-relativelinks.py sysroot
 ```
@@ -169,6 +169,8 @@ So now we see that absolute links are replaced with relative:
 138307961 lrwxrwxrwx  1 root root       56 Feb 16 00:18 libblas.so.3 -> ../../../etc/alternatives/libblas.so.3-aarch64-linux-gnu
 138308251 lrwxrwxrwx  1 root root       58 Feb 16 00:18 liblapack.so.3 -> ../../../etc/alternatives/liblapack.so.3-aarch64-linux-gnu
 ```
+##### Toolchain
+Absolutely religiously following steps from [this repository](https://github.com/tttapa/docker-arm-cross-toolchain) to install [aarch64-rpi3-linux-gnu](https://github.com/tttapa/docker-arm-cross-toolchain/releases/latest/download/x-tools-aarch64-rpi3-linux-gnu.tar.xz) (64-bit, RPi 2B rev. 1.2, RPi 3B/3B+, CM 3, RPi 4B/400, CM 4, RPi Zero 2 W) toolchain.
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
