@@ -139,10 +139,36 @@ usbstream:CARD=seeed4micvoicec
 #### Host machine
 ##### SYSROOT
 First of all we need to create sysroot folder on the local machine. So far I have found two methods to do this: 
-  * The first one is to create version of Raspberry Pi OS in a folder on your computer, like how it is advised [here](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/Development-setup.html) or [there](https://forums.raspberrypi.com/viewtopic.php?t=343710#p2059499). While advertised advantages of this method are very attractive and elegant, unfortunatelly, they did not work for me.
-  
-  
-
+  * The first one is to create version of Raspberry Pi OS in a folder on your computer, like how it is advised [here](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/Development-setup.html) or [there](https://forums.raspberrypi.com/viewtopic.php?t=343710#p2059499). While advertised advantages of this method are very attractive and elegant, unfortunatelly, this method did not work for me.
+  * The second [method](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) is more like brute force approach. In this method, we create `sysroot` folder on the **host** machine, and manually rsync to copy files from the target:
+```
+mkdir sysroot
+cd sysroot
+sudo rsync -avz --rsync-path="sudo rsync" voldemort@raspberrypi_ip:/etc .
+sudo rsync -avz voldemort@raspberrypi_ip:/lib .
+sudo rsync -avz voldemort@raspberrypi_ip:/usr/include usr
+sudo rsync -avz voldemort@raspberrypi_ip:/usr/lib usr
+sudo rsync -avz voldemort@raspberrypi_ip:/usr/local usr
+sudo rsync -avz voldemort@raspberrypi_ip:/home/voldemort/.local/ .local
+```
+Attentive reader may notice that here I have few more lines as compared to the original post. This is becasue we need to repair absolute symlinks with relatie ones, and some of the symlinks are pointing to the `/etc` location, for example:
+```
+138307961 lrwxrwxrwx  1 root root       48 Sep 21 19:52 libblas.so.3 -> /etc/alternatives/libblas.so.3-aarch64-linux-gnu
+138308251 lrwxrwxrwx  1 root root       50 Sep 21 19:52 liblapack.so.3 -> /etc/alternatives/liblapack.so.3-aarch64-linux-gnu
+```
+hence we need to 
+```
+sudo rsync -avz --rsync-path="sudo rsync" voldemort@raspberrypi_ip:/etc .
+```
+Assuming we follwoed the [steps](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) we have `sysroot-relativelinks.py` code available, so we execute it:
+```
+./sysroot-relativelinks.py sysroot
+```
+So now we see that absolute links are replaced with relative:
+```
+138307961 lrwxrwxrwx  1 root root       56 Feb 16 00:18 libblas.so.3 -> ../../../etc/alternatives/libblas.so.3-aarch64-linux-gnu
+138308251 lrwxrwxrwx  1 root root       58 Feb 16 00:18 liblapack.so.3 -> ../../../etc/alternatives/liblapack.so.3-aarch64-linux-gnu
+```
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
