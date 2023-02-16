@@ -140,7 +140,7 @@ usbstream:CARD=seeed4micvoicec
 ##### SYSROOT
 First of all we need to create sysroot folder on the local machine. So far I have found two methods to do this: 
   * The first one is to create version of Raspberry Pi OS in a folder on your computer, like how it is advised [here](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/Development-setup.html) or [there](https://forums.raspberrypi.com/viewtopic.php?t=343710#p2059499). While advertised advantages of this method are very attractive and elegant, unfortunatelly, this method did not work for me.
-  * The second [method](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) is more like brute force approach. In this method, we create `sysroot` folder on the **host** machine, and manually rsync to copy files from the target:
+  * The second [method](https://raspberrypi.stackexchange.com/questions/108351/cross-compiling-and-sysroot) is more like brute force approach. In this method, we create `sysroot` folder on the **host** machine, and manually rsync to copy files from the **target**:
 ```
 mkdir sysroot
 cd sysroot
@@ -151,7 +151,7 @@ sudo rsync -avz voldemort@raspberrypi_ip:/usr/lib usr
 sudo rsync -avz voldemort@raspberrypi_ip:/usr/local usr
 sudo rsync -avz voldemort@raspberrypi_ip:/home/voldemort/.local/ .local
 ```
-Attentive reader may notice that here I have few more lines as compared to the original post. This is becasue we need to repair absolute symlinks with relatie ones, and some of the symlinks are pointing to the `/etc` location, for example:
+Attentive reader may notice that here I have few more lines as compared to the original post. This is becasue we need to repair absolute symlinks with relative ones, and some of the symlinks are pointing to the `/etc` location, for example:
 ```
 138307961 lrwxrwxrwx  1 root root       48 Sep 21 19:52 libblas.so.3 -> /etc/alternatives/libblas.so.3-aarch64-linux-gnu
 138308251 lrwxrwxrwx  1 root root       50 Sep 21 19:52 liblapack.so.3 -> /etc/alternatives/liblapack.so.3-aarch64-linux-gnu
@@ -164,7 +164,7 @@ Assuming we followed the [steps](https://raspberrypi.stackexchange.com/questions
 ```
 ./sysroot-relativelinks.py sysroot
 ```
-So now we see that absolute links are replaced with relative:
+So now we see that absolute links are replaced with relative ones:
 ```
 138307961 lrwxrwxrwx  1 root root       56 Feb 16 00:18 libblas.so.3 -> ../../../etc/alternatives/libblas.so.3-aarch64-linux-gnu
 138308251 lrwxrwxrwx  1 root root       58 Feb 16 00:18 liblapack.so.3 -> ../../../etc/alternatives/liblapack.so.3-aarch64-linux-gnu
@@ -172,6 +172,17 @@ So now we see that absolute links are replaced with relative:
 ##### Toolchain
 Absolutely religiously following steps from [this repository](https://github.com/tttapa/docker-arm-cross-toolchain) to install [aarch64-rpi3-linux-gnu](https://github.com/tttapa/docker-arm-cross-toolchain/releases/latest/download/x-tools-aarch64-rpi3-linux-gnu.tar.xz) (64-bit, RPi 2B rev. 1.2, RPi 3B/3B+, CM 3, RPi 4B/400, CM 4, RPi Zero 2 W) toolchain.
 
+##### IDE Configuration
+As we have metnioned before, our IDE of choice is **Eclipse**. Now, I can imagine a lot of people will come up with multiple interesting comments about merits of various different platforms, and how Eclipse is lacking and not modern and gross. And I agree vigorously.
+
+###### Create New Project
+File->New->Other->C++ Project
+![Select a Wizard]
+Press **Next**
+
+
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
 [Raspberry Pi Configuration]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/remmina_Raspberry_192.168.1.205_20230214-082127.png
+
+[Select a Wizard]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/SelectAWizard.png
