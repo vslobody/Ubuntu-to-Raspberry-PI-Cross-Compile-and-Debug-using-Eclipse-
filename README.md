@@ -179,8 +179,11 @@ As we have metnioned before, our IDE of choice is **Eclipse**. Now, I can imagin
 File->New->Other->C++ Project<br>
 ![Select a Wizard]
 <br>Press **Next**<br>
+We want to use **Cmake4eclipse** wizard.
 Name the Project <br>
-![C++ Project]
+![C++ Project] <br>
+Press **Next**<br>
+Press **Finish**<br>
 
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
