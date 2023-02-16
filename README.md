@@ -177,7 +177,7 @@ As we have metnioned before, our IDE of choice is **Eclipse**. Now, I can imagin
 
 ###### Create New Project
 File->New->Other->C++ Project<br>
-!![Select a Wizard]<br>
+![Select a Wizard]<br>
 Press **Next**<br>
 ![C++ Project]
 
