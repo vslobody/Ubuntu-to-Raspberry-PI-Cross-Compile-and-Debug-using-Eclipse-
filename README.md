@@ -176,9 +176,10 @@ Absolutely religiously following steps from [this repository](https://github.com
 As we have metnioned before, our IDE of choice is **Eclipse**. Now, I can imagine a lot of people will come up with multiple interesting comments about merits of various different platforms, and how Eclipse is lacking and not modern and gross. And I agree vigorously.
 
 ###### Create New Project
-File->New->Other->C++ Project
-!![Select a Wizard]
-Press **Next**
+File->New->Other->C++ Project<br>
+!![Select a Wizard]<br>
+Press **Next**<br>
+![C++ Project]
 
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
@@ -186,3 +187,4 @@ Press **Next**
 [Raspberry Pi Configuration]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/remmina_Raspberry_192.168.1.205_20230214-082127.png
 
 [Select a Wizard]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/SelectAWizard.png
+[C++ Project](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CPlusPlusProject.png)
