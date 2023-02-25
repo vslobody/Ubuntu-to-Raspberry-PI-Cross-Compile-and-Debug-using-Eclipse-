@@ -218,6 +218,19 @@ Now we want to instruct CMake to use this file by setting the **CMAKE_TOOLCHAIN_
 ![Add new CMake Cache Entry]
 <br>
 ![Properties for RPI_X_Compile]
+<br>
+Since we want to be able to debug our code, we need to set up our project for Remote Debugging. Click **File -> New -> Other**. In the window that appears, double-click **Remote System Explorer** to expand it and select **Connection**.<br>
+![Connection]
+<br>
+Click **Next**. Select **Linux**.
+<br>
+![Connection Linux]
+<br>
+Click **Next**. At Host name, enter the IP address of the Raspberry Pi (192.168.1.205 in the example).
+
+At **Connection name**, enter a name for the connection (**RPI** in the example).<br>
+![Connection Name]
+<br>
 
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
@@ -229,5 +242,11 @@ Now we want to instruct CMake to use this file by setting the **CMAKE_TOOLCHAIN_
 [Add new CMake Cache Entry]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/AddNewCMakeCacheEntry_1.png
 
 [Properties for RPI_X_Compile]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/AddNewCMakeCacheEntry_2.png
+
+[Connection]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/Connection.png
+
+[Connection Linux]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CoonectionLinux.png
+
+[Connection Name]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/ConnectionName.png
 
 [C++ Project]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CPlusPlusProject.png
