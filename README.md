@@ -246,6 +246,9 @@ In the **Remote Systems** tab, right-click the connection and select **Propertie
 ![Properties for RPI]
 <br>
 
+###### Sample Code
+We need to have a code to debug, aren't we? To get there, we will make a little detour. Without going into a lot of details, the original plan was to use **Raspberry Pi** platform to do some cute audio processing, so we equipped it with Seeed Audio Card [Seeed Audio Card](https://www.amazon.com/gp/product/B076SSR1W1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). We would like to use [odas](https://github.com/introlab/odas.git) library. So we copy it to the **odas** folder of the project. We also create sample **main.cpp** file in **src** folder and corresponding header file in the **include** folder.
+
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
 [Raspberry Pi Configuration]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/remmina_Raspberry_192.168.1.205_20230214-082127.png
