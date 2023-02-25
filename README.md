@@ -232,6 +232,19 @@ At **Connection name**, enter a name for the connection (**RPI** in the example)
 ![Connection Name]
 <br>
 
+Click **Next**. Under **Configuration**, select **ssh.files**.<br>
+![New Connection]
+<br>
+Click **Next**. Select **processes.shell.Linux**. <br>
+![New Connection 2]
+<br>
+Click **Next**. Select **ssh.shells**.<br>
+![New Connection 3]
+<br>
+Click **Finish**.
+In the **Remote Systems** tab, right-click the connection and select **Properties**. Set the connection's user to **voldemort**: click Host. Click the small icon just to the right of Default User ID and enter **voldemort**.<br>
+![Properties for RPI]
+<br>
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
@@ -248,5 +261,13 @@ At **Connection name**, enter a name for the connection (**RPI** in the example)
 [Connection Linux]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CoonectionLinux.png
 
 [Connection Name]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/ConnectionName.png
+
+[New Connection]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/NewConnection.png
+
+[New Connection 2]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/NewConnection2.png
+
+[New Connection 3]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/NewConnection3.png
+
+[Properties for RPI]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/Properties%20for%20RPI.png
 
 [C++ Project]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CPlusPlusProject.png
