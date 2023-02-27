@@ -8,7 +8,7 @@ SET(CMAKE_C_COMPILER /home/voldemaro/eclipse/raspberrypi/opt/x-tools/aarch64-rpi
 SET(CMAKE_CXX_COMPILER /home/voldemaro/eclipse/raspberrypi/opt/x-tools/aarch64-rpi3-linux-gnu/bin/aarch64-rpi3-linux-gnu-g++)
 
 # where is the target environment located
-set(CMAKE_SYSROOT /home/voldemaro/eclipse/raspberrypi/sysroot)
+set(CMAKE_SYSROOT /home/voldemaro/eclipse/raspberrypi/sysroot2)
 set(CMAKE_FIND_ROOT_PATH ${CMAKE_SYSROOT})
 
 # SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --sysroot=${CMAKE_FIND_ROOT_PATH}")
@@ -18,7 +18,9 @@ SET(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} --sysroot=${CMAKE_FI
 
 # adjust the default behavior of the FIND_XXX() commands:
 # search programs in the host environment
-set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM BOTH)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
 
 # search headers and libraries in the target environment
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
