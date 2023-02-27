@@ -135,7 +135,21 @@ usbstream:CARD=seeed4micvoicec
     USB Stream Output
 
 ```
-
+While the following instructions are more pertinet to the project I am pursuing, providing them here nevertheless, for completeness properties. Need to install packages that will be required down the road later.
+```
+sudo apt-get update
+sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev libgconf-2-4 libpulse-dev python3-matplotlib cmake
+```
+We also planning to use header only **matplolib-cpp** library:
+```
+git clone https://github.com/lava/matplotlib-cpp.git
+cd matplotlib-cpp/
+mkdir build
+cd build/
+cmake ..
+make
+sudo make install
+```
 #### Host machine
 ##### SYSROOT
 First of all we need to create sysroot folder on the local machine. So far I have found two methods to do this: 
