@@ -192,10 +192,11 @@ sudo rm libpthread.so
 sudo ln -s ../../../lib/aarch64-linux-gnu/libpthread.so.0 libpthread.so
 ```
 ##### Toolchain
-Absolutely religiously following steps from [this repository](https://github.com/tttapa/docker-arm-cross-toolchain) to install [aarch64-rpi3-linux-gnu](https://github.com/tttapa/docker-arm-cross-toolchain/releases/latest/download/x-tools-aarch64-rpi3-linux-gnu.tar.xz) (64-bit, RPi 2B rev. 1.2, RPi 3B/3B+, CM 3, RPi 4B/400, CM 4, RPi Zero 2 W) toolchain. Once this step is completed done, we need to transfer [gdbserver](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/Debugging.html) to **target** machine:
-###### Installation of the gdbserver to the target
+Absolutely religiously following steps from [this repository](https://github.com/tttapa/docker-arm-cross-toolchain) to install [aarch64-rpi3-linux-gnu](https://github.com/tttapa/docker-arm-cross-toolchain/releases/latest/download/x-tools-aarch64-rpi3-linux-gnu.tar.xz) (64-bit, RPi 2B rev. 1.2, RPi 3B/3B+, CM 3, RPi 4B/400, CM 4, RPi Zero 2 W) toolchain. 
+Once this step is completed, we need to transfer [gdbserver](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/Debugging.html) to **target** machine:
+###### Installation of the gdbserver to the Target
 ```
-scp /home/voldemaro/eclipse/raspberrypi/opt/x-tools/aarch64-rpi3-linux-gnu/aarch64-rpi3-linux-gnu/debug-root/usr/bin/gdbserver voldemort@raspberrypi_ip:~
+scp ~/x-tools/aarch64-rpi3-linux-gnu/aarch64-rpi3-linux-gnu/debug-root/usr/bin/gdbserver voldemort@raspberrypi_ip:~
 ssh voldemort@raspberrypi_ip sudo mv gdbserver /usr/local/bin
 ```
 
