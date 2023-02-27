@@ -150,6 +150,8 @@ cmake ..
 make
 sudo make install
 ```
+There are additional steps required to complete configuration of the **target** machine, and they depend on certain steps on the **host** machine, so we will provide those in the next section. I know this is a bit confusing.
+
 #### Host machine
 ##### SYSROOT
 First of all we need to create sysroot folder on the local machine. So far I have found two methods to do this: 
