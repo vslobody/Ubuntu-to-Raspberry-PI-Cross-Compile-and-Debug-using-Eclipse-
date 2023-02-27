@@ -140,7 +140,7 @@ While the following instructions are more pertinet to the project I am pursuing,
 sudo apt-get update
 sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev libgconf-2-4 libpulse-dev python3-matplotlib cmake
 ```
-We also planning to use header only **matplolib-cpp** library:
+We also planning to use header only **matplotlib-cpp** library:
 ```
 git clone https://github.com/lava/matplotlib-cpp.git
 cd matplotlib-cpp/
@@ -185,6 +185,8 @@ So now we see that absolute links are replaced with relative ones:
 138307961 lrwxrwxrwx  1 root root       56 Feb 16 00:18 libblas.so.3 -> ../../../etc/alternatives/libblas.so.3-aarch64-linux-gnu
 138308251 lrwxrwxrwx  1 root root       58 Feb 16 00:18 liblapack.so.3 -> ../../../etc/alternatives/liblapack.so.3-aarch64-linux-gnu
 ```
+There is additional [**voodooish**](https://github.com/Azure/azure-iot-sdk-c/issues/1093) 
+
 ##### Toolchain
 Absolutely religiously following steps from [this repository](https://github.com/tttapa/docker-arm-cross-toolchain) to install [aarch64-rpi3-linux-gnu](https://github.com/tttapa/docker-arm-cross-toolchain/releases/latest/download/x-tools-aarch64-rpi3-linux-gnu.tar.xz) (64-bit, RPi 2B rev. 1.2, RPi 3B/3B+, CM 3, RPi 4B/400, CM 4, RPi Zero 2 W) toolchain.
 
