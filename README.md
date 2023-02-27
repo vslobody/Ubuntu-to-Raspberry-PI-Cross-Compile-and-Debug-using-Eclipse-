@@ -466,7 +466,7 @@ In Eclipse, select **Run -> Debug Configurations**.
 
 Under C/C++ Remote Application, press **New Launch Configuration** and observe some settings auto-populated for your project. <br>
 
-Other settings need to be manually populated. <br>
+Other settings need to be manually populated, specifically, to enable full debug support, we need to declare sysroot in the [.gdbinit](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/.gdbinit) file.<br>
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
