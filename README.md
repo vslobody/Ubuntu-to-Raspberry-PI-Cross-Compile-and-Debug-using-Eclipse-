@@ -257,7 +257,16 @@ We need to have a code to debug, aren't we? To get there, we will make a little 
         device = 0;
     }
 ```
-In our case, the card is using 3, not 1:
+In our case, the card is using 3, not 1. Simply running
+```
+arecord --list-devices
+**** List of CAPTURE Hardware Devices ****
+card 3: seeed4micvoicec [seeed-4mic-voicecard], device 0: bcm2835-i2s-ac10x-codec0 ac10x-codec0-0 [bcm2835-i2s-ac10x-codec0 ac10x-codec0-0]
+  Subdevices: 1/1
+  
+
+```
+shows us, that we are indeed using card 3, so we need to modify our configuration file accordingly:
 ```
     # Input with raw signal from microphones
     interface: {
@@ -266,7 +275,6 @@ In our case, the card is using 3, not 1:
         device = 0;
     }
 ```
-So we need to modify our configuration file accordingly.
 
 We also create sample **main.cpp** file in **src** folder and corresponding header file in the **include** folder. And, of course, we have **CMakeLists.txt** file.
 
