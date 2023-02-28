@@ -257,7 +257,17 @@ In Eclipse, select **Run -> Debug Configurations**.
 
 Under C/C++ Remote Application, press **New Launch Configuration** and observe some settings auto-populated for your project. <br>
 
-Other settings need to be manually populated, specifically, to enable full debug support, we need to declare sysroot in the [.gdbinit](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/.gdbinit) file.<br>
+In the **Main** tab we need to provide info (if not autopopulated) for **C/C++ Application**, **Connection**, and **Remote Absolute File Path for C/C++ Application:**<br>
+![DebugConfiguration_Main]
+<br>
+
+In the **Arguments** tab we need to provide arguments specific to the odas libarary, like location of the [configuration file] and some settings.<br>
+![DebugConfiguration_Arguments]
+<br>
+
+In the **Debugger** tab we need to provide for the location of the debugger and, to enable full debug support, we need to declare sysroot in the [.gdbinit](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/.gdbinit) file.<br>
+![DebugConfiguration_Debugger]
+<br>
 
 [Raspberry PI Image Installation]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/RaspberryPIImage.png
 
@@ -286,3 +296,9 @@ Other settings need to be manually populated, specifically, to enable full debug
 [C++ Project]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/CPlusPlusProject.png
 
 [LD_LIBRARY_PATH]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/LD_LIBRARY_PATH.png
+
+[DebugConfiguration_Main]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/DebugConfiguration_Main.png
+
+[DebugConfiguration_Arguments]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/DebugConfiguration_Arguments.png
+
+[DebugConfiguration_Debugger]: https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/common/images/DebugConfiguration_Debugger.png
