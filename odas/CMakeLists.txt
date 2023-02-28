@@ -192,7 +192,7 @@ set(SRC
 
 )
 
-add_library(odas SHARED
+add_library(odas STATIC
     ${SRC}
 )
 
