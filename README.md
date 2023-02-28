@@ -248,7 +248,7 @@ In the **Remote Systems** tab, right-click the connection and select **Propertie
 <br>
 Toolchain debugger depends on availablity of the **libpython3.6m.so** library, so we need to add path to this library to the **![LD_LIBRARY_PATH]**
 ###### Sample Code
-We need to have a code to debug, aren't we? To get there, we will make a little detour. Without going into a lot of details, the original plan was to use **Raspberry Pi** platform to do some cute audio processing, so we equipped it with Seeed Audio Card [Seeed Audio Card](https://www.amazon.com/gp/product/B076SSR1W1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). We would like to use [odas](https://github.com/introlab/odas.git) library. So we copy it to the **odas** folder of the project. There are few modifications required though. First of all, we modify a little bit CMakeLists.txt file, and, secondly, we also modify configuration file [respeaker_4_mic_array.cfg] which we also copy over to our **target** platform. In the original repo we have 
+We need to have a code to debug, aren't we? To get there, we will make a little detour. Without going into a lot of details, the original plan was to use **Raspberry Pi** platform to do some cute audio processing, so we equipped it with Seeed Audio Card [Seeed Audio Card](https://www.amazon.com/gp/product/B076SSR1W1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). We would like to use [odas](https://github.com/introlab/odas.git) library. So we copy it to the **odas** folder of the project. There are few modifications required though. First of all, we modify a little bit [CMakeLists.txt](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/odas/CMakeLists.txt) file, and, secondly, we also modify configuration file [respeaker_4_mic_array.cfg](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/odas/config/odaslive/respeaker_4_mic_array.cfg) which we also copy over to our **target** platform. In the original repo we have 
 ```
     # Input with raw signal from microphones
     interface: {
@@ -276,7 +276,7 @@ shows us, that we are indeed using card 3, so we need to modify our configuratio
     }
 ```
 
-We also create sample **main.cpp** file in **src** folder and corresponding header file in the **include** folder. And, of course, we have **CMakeLists.txt** file.
+We also create sample [**main.cpp**](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/src/main.cpp) file in **src** folder and corresponding header file in the **include** folder. And, of course, we have [**CMakeLists.txt**](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/CMakeLists.txt) file.
 
 ###### Set up the Debug Configuration
 Now we will try to debug it on target.
