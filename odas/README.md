@@ -1,1 +1,1 @@
-Please clone [odas](https://github.com/introlab/odas) library into this folder. Please use provided [CMakeLists.txt]() file instead of the one coming from repository.
+Please clone [odas](https://github.com/introlab/odas) library into this folder. Please use provided [CMakeLists.txt](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/odas/CMakeLists.txt) file instead of the one coming from repository.
