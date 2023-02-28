@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
+include(CMakePrintHelpers)
 
 # Set some basic project attributes
 project (RPI_X_Compile
 	VERSION 0.1
-	DESCRIPTION "RPI_X_Compile")
+	DESCRIPTION "Audio Sweep Project")
 
 add_subdirectory(	
 	${PROJECT_SOURCE_DIR}/odas
