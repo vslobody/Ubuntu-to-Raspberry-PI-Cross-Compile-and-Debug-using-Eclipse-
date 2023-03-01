@@ -289,7 +289,7 @@ In the **Main** tab we need to provide info (if not autopopulated) for **C/C++ A
 ![DebugConfiguration_Main]
 <br>
 
-In the **Arguments** tab we need to provide arguments specific to the odas libarary, like location of the [configuration file] and some settings.<br>
+In the **Arguments** tab we need to provide arguments specific to the odas libarary, like location of the [configuration file](https://github.com/vslobody/Ubuntu-to-Raspberry-PI-Cross-Compile-and-Debug-using-Eclipse-/blob/main/odas/config/odaslive/respeaker_4_mic_array.cfg) and some settings.<br>
 ![DebugConfiguration_Arguments]
 <br>
 
